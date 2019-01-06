@@ -16,6 +16,20 @@
                             Welcome to Admin 
                             <small>Author</small>
                         </h1>
+
+
+                        <div class="col-xs-6">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="cat_title"> Add Categories</label>
+                                <input type="text" class="form-control" name="cat_title">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Add Category" name="submit">
+                            </div>
+                            
+                        </form>
+                        </div>
                         
                     </div>
                 </div>

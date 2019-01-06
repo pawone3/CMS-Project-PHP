@@ -19,7 +19,7 @@
                 <ul class="nav navbar-nav">
 
                     <?php 
-
+                        
                         $query="SELECT * FROM categories";
                         $select_all_categories_query = mysqli_query($connection, $query);
                         // echo "hi dear";
@@ -31,10 +31,10 @@
 
                     ?>
 
-                  <!--   <li>
-                        <a href="#">About</a>
-                    </li>
                     <li>
+                        <a href="admin">Admin</a>
+                    </li>
+                    <!-- <li>
                         <a href="#">Services</a>
                     </li>
                     <li>

@@ -16,10 +16,33 @@
 
                  <?php 
 
-                        $query="SELECT * FROM posts";
-                        $select_all_posts_query = mysqli_query($connection, $query);
+
+                    if(isset($_POST['submit'])){
+
+                    $search= $_POST['search'];
+
+                    $search_query="SELECT * FROM posts WHERE post_tags LIKE '%$search%'";
+                    $query=mysqli_query($connection, $search_query);
+
+                    if(!$search_query) {
+                        die("Query failed". mysqli_error($connection));
+                    }
+                    
+                    $count=mysqli_num_rows($query);
+                    if($count==0){
+                        echo "<h1>No result</h1>";
+                    }
+
+
+
+                    else
+                        {
+
+
+                        //          $query="SELECT * FROM posts";
+                        // $select_all_posts_query = mysqli_query($connection, $query);
                         // echo "hi dear";
-                        while ($row=mysqli_fetch_assoc($select_all_posts_query)) {
+                        while ($row=mysqli_fetch_assoc($query)) {
 
                             $posts_title=$row['post_title'];
                             $posts_author =$row['post_author'];
@@ -49,22 +72,25 @@
 
                 <hr>   
 
-                       <?php } ?>
+                       <?php } 
+                       
+                        }
 
-                    
+                   }
+                    ?>
 
 
                 
 
                 <!-- Pager -->
-                <ul class="pager">
+                <!-- <ul class="pager">
                     <li class="previous">
                         <a href="#">&larr; Older</a>
                     </li>
                     <li class="next">
                         <a href="#">Newer &rarr;</a>
-                    </li>
-                </ul>
+                     </li>
+                 </ul> --> 
 
             </div>
 
