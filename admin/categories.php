@@ -1,9 +1,9 @@
-    <?php include "includes/header.php"; ?>
+    <?php include "includes/admin_header.php"; ?>
 
     <div id="wrapper">
 
         <!-- Navigation -->
-         <?php include "includes/navigation.php"; ?>       
+         <?php include "includes/admin_navigation.php"; ?>       
 
         <div id="page-wrapper">
 
@@ -19,7 +19,9 @@
 
 
                         <div class="col-xs-6">
-                        <form action="">
+                            <?php  insert_categories();  ?>
+
+                        <form action="" method="post">
                             <div class="form-group">
                                 <label for="cat_title"> Add Categories</label>
                                 <input type="text" class="form-control" name="cat_title">
@@ -27,8 +29,36 @@
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Add Category" name="submit">
                             </div>
-                            
                         </form>
+
+                        <?php 
+                            if(isset($_GET['edit'])){
+                                $cat_id=$_GET['edit'];
+                                include "includes/update_categories.php";
+                            }
+                        ?>
+
+                        </div>
+                        <div class="col-xs-6">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>CATEGORY TITLE</th>
+                                        <th>DELETE</th>
+                                        <th>UPDATE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <!---find All Categories --->
+                                    <?php findAllCategories(); ?>
+
+                                    <!----// Delete Category---->
+                                      <?php deleteCategories(); ?>
+
+                                </tbody>
+                            </table>
                         </div>
                         
                     </div>
@@ -40,6 +70,6 @@
 
         </div>
         <!-- /#page-wrapper -->
-         <?php include "includes/footer.php"; ?>
+         <?php include "includes/admin_footer.php"; ?>
 
     
