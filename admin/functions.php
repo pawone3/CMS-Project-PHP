@@ -59,7 +59,12 @@ function deleteCategories(){
 }
 
 
-
+function confirmQuery($result){
+    if(!$result){
+        global $connection;
+        echo("Query Failed".mysqli_error($connection));
+    }
+}
 
 
 

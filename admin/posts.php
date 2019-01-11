@@ -16,39 +16,35 @@
                             Welcome to Admin 
                             <small>Author</small>
                         </h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        id 
-                                    </th>
-                                    <th>
-                                        author
-                                    </th>
-                                    <th>
-                                        title
-                                    </th>
-                                    <th>
-                                        category
-                                    </th>
-                                    <th>
-                                        status
-                                    </th>
-                                    <th>
-                                        image
-                                    </th>
-                                    <th>
-                                        tags
-                                    </th>
-                                    <th>
-                                        comments
-                                    </th>
-                                    <th>
-                                        date
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
+                        
+                        <?php 
+
+                            if (isset($_GET['source'])) {
+                                $source = $_GET['source'];
+                            }
+                            else {
+                                $source="";
+                            }
+                            
+                            switch ($source) {
+                                case 'add_post':
+                                     include "includes/add_post.php";
+                                    break;
+
+                                case 'edit_post':
+                                     include "includes/edit_post.php";
+                                    break;
+
+                                case '44':
+                                    echo "34 is good";
+                                    break;
+                                
+                                default:
+                                    include "includes/view_all_posts.php";
+                                    break;
+                            }
+                        ?>
+                        
 
                     </div>
                     
