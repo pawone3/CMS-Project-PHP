@@ -1,5 +1,6 @@
     <!---connection--->
     <?php include "includes/db.php" ?>
+    <?php  include "admin/functions.php";?>
     <!--header-->
     <?php include "includes/header.php" ?>
 
@@ -15,26 +16,24 @@
             <div class="col-md-8">
 
                  <?php 
+                        if(isset($_GET['category']))
+                        $category_id=$_GET['category'];
+                        // echo($category_id);
+                        $query="SELECT * FROM posts where post_category_id='{$category_id}'";
+                        $select_all_posts = mysqli_query($connection, $query);
+    
+                        confirmQuery($select_all_posts);
 
-                        $query="SELECT * FROM posts";
-                        $select_all_posts_query = mysqli_query($connection, $query);
-                        // echo "hi dear";
-                        $c=0;
-                        while ($row=mysqli_fetch_assoc($select_all_posts_query)) {
+                        while($row=mysqli_fetch_assoc($select_all_posts)) {
                             $posts_id=$row['post_id'];
                             $posts_title=$row['post_title'];
                             $posts_author =$row['post_author'];
                             $posts_date=$row['post_date'];
                             $posts_image=$row['post_image'];
                             $posts_content=substr($row['post_content'],0,150);
-                            $posts_status=$row['post_status'];
 
-
-                            if($posts_status=="published"){
-                                $c++;
-                ?>      
-
-                                <h1 class="page-header">
+                ?>
+                            <h1 class="page-header">
                                     Page Heading
                                     <small>Secondary Text</small>
                                 </h1>
@@ -50,16 +49,12 @@
                                 <hr>
                                 <img class="img-responsive" src="images/<?php echo $posts_image; ?> " alt="">
                                 <hr>
-                                <p><?php echo $posts_content; ?>....</p>
+                                <p><?php echo $posts_content; ?></p>
                                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>   
 
-                       <?php } }
-                        if($c==0){
-                            echo "<h1>No Result</h1>";
-                        }
-                       ?>
+                       <?php } ?>
 
                     
 
