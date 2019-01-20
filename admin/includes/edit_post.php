@@ -19,8 +19,6 @@
         $post_tags=$row['post_tags'];
     }
 
-	echo "<img width='50' height='50' alt='image' class='img-responsive' src='../images/{$post_image}'></img>";
-
 }
 
 if(isset($_POST['update_post'])){
@@ -38,9 +36,6 @@ if(isset($_POST['update_post'])){
 
 	move_uploaded_file($post_image_temp, "../images/$post_image");
 
-
-
-	echo "<img width='50' height='50' alt='image' class='img-responsive' src='../images/{$post_image}'></img>";
 
 
 
