@@ -24,12 +24,9 @@
 	$create_post_query=mysqli_query($connection,$query);
 	confirmQuery($create_post_query);  
 	
-		
-		
 			if($create_post_query){
 
 				 header('Location:posts.php?source=add_post');
-
 			}
 		
 		 
@@ -38,6 +35,8 @@
 
 	
 ?>
+
+
 
 
 

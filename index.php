@@ -16,7 +16,7 @@
 
                  <?php 
 
-                        $query="SELECT * FROM posts";
+                        $query= "SELECT * FROM posts";
                         $select_all_posts_query = mysqli_query($connection, $query);
                         // echo "hi dear";
                         $c=0;

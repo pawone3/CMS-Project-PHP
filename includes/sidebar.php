@@ -17,6 +17,19 @@
                     <!-- /.input-group -->
                 </div>
 
+                <div class="well">
+                    <h4>Enter your email for Notifications:</h4>
+                    <form action="search.php" method="post"style="margin-left: 50px;">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control">
+                    </div>
+                    <span class="input-group-btn">
+                            <input type="submit" class="btn btn-primary" value="submit" name="login">
+                        </span>
+                    </form>
+                    <!-- /.input-group -->
+                </div>
+
                 <!-- /.login form -->
 
                 <div class="well">
