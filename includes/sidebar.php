@@ -1,6 +1,22 @@
 <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
+    <!-- /.login form -->
 
+                <div class="well">
+                    <h4>Login</h4>
+                    <form class="input-bar" action="includes/login.php" method="post">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                        <span class="input-group-btn">
+                            <input type="submit" class="btn btn-primary" value="submit" name="login">
+                        </span>
+                    </div>
+                    </form>
+                </div>
+                
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Blog Search</h4>
@@ -19,32 +35,15 @@
 
                 <div class="well">
                     <h4>Enter your email for Notifications:</h4>
-                    <form action="search.php" method="post"style="margin-left: 50px;">
+                    <form action="includes/send_mail/index.php" method="post"style="margin-left: 50px;">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control">
+                        <input type="text" name="recipient_address" class="form-control">
                     </div>
                     <span class="input-group-btn">
                             <input type="submit" class="btn btn-primary" value="submit" name="login">
                         </span>
                     </form>
                     <!-- /.input-group -->
-                </div>
-
-                <!-- /.login form -->
-
-                <div class="well">
-                    <h4>Login</h4>
-                    <form class="input-bar" action="includes/login.php" method="post">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Enter Username">
-                    </div>
-                    <div class="input-group">
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
-                        <span class="input-group-btn">
-                            <input type="submit" class="btn btn-primary" value="submit" name="login">
-                        </span>
-                    </div>
-                    </form>
                 </div>
 
 

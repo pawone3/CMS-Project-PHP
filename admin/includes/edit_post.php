@@ -37,8 +37,6 @@ if(isset($_POST['update_post'])){
 	move_uploaded_file($post_image_temp, "../images/$post_image");
 
 
-
-
 	$query="UPDATE posts SET ";
 	$query.="post_title='{$post_title}', ";
 	$query.="post_category_id={$post_category_id}, ";
@@ -55,9 +53,6 @@ if(isset($_POST['update_post'])){
 	// header('location:posts.php');
 
 }
-
-
-
 
 ?>
 

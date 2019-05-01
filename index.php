@@ -14,6 +14,11 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
+            <h1 class="page-header">
+                CodeWell 
+                <small>Ready Set Code</small>
+            </h1>
+
                  <?php 
 
                         $query= "SELECT * FROM posts";
@@ -34,11 +39,6 @@
                                 $c++;
                 ?>      
 
-                                <h1 class="page-header">
-                                    Page Heading
-                                    <small>Secondary Text</small>
-                                </h1>
-
                                 <!-- First Blog Post -->
                                 <h2>
                                     <a href="post.php?p_id=<?php echo $posts_id ; ?>"><?php echo $posts_title; ?></a>
@@ -48,10 +48,11 @@
                                 </p>
                                 <p><span class="glyphicon glyphicon-time"></span> <?php echo $posts_date; ?></p>
                                 <hr>
+                                <!-- <img class="img-responsive" src="images/<?php echo $posts_image; ?> " alt=""> -->
                                 <img class="img-responsive" src="images/<?php echo $posts_image; ?> " alt="">
                                 <hr>
                                 <p><?php echo $posts_content; ?>....</p>
-                                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                <a class="btn btn-primary" href="post.php?p_id=<?php echo $posts_id ; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>   
 

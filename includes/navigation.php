@@ -32,14 +32,17 @@
                     ?>
 
                     <li>
-                        <a href="admin">Admin</a>
-                    </li>
-                    <!-- <li>
-                        <a href="#">Services</a>
+                        <a href="admin">ADMIN </a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
-                    </li> -->
+                        <a href="#">TAKE QUIZ</a>
+                    </li>
+                    <li>
+                        <a href="#">CATEGORIES</a>
+                    </li>
+                    <li class="pull-right">
+                        <a href="#">REGISTER</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
